@@ -1,18 +1,18 @@
 :root {
-  --bg: #07090e;
-  --bg-2: #0b0e16;
-  --card: #10141d;
-  --card-2: #151a26;
-  --line: rgba(232, 237, 245, 0.08);
-  --line-strong: rgba(232, 237, 245, 0.16);
-  --text: #e8edf5;
-  --muted: #8d97ab;
-  --faint: #5d6678;
-  --accent: #4de2c4;
-  --accent-dim: rgba(77, 226, 196, 0.12);
-  --accent-2: #7aa2ff;
-  --gold: #f0b45a;
-  --shadow: 0 24px 60px rgba(0, 0, 0, 0.38);
+  --bg: #f5f7fb;
+  --bg-2: #eef2f8;
+  --card: #ffffff;
+  --card-2: #f8fafc;
+  --line: rgba(18, 24, 38, 0.08);
+  --line-strong: rgba(18, 24, 38, 0.14);
+  --text: #121826;
+  --muted: #5b6578;
+  --faint: #7a8496;
+  --accent: #0d8f7c;
+  --accent-dim: rgba(13, 143, 124, 0.1);
+  --accent-2: #3558c8;
+  --gold: #c4851a;
+  --shadow: 0 18px 40px rgba(18, 24, 38, 0.08);
   --radius: 16px;
   --sans: "Outfit", "Segoe UI", sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, monospace;
@@ -46,8 +46,8 @@ body::before {
   pointer-events: none;
   z-index: 0;
   background:
-    radial-gradient(900px 500px at 12% -10%, rgba(77, 226, 196, 0.09), transparent 55%),
-    radial-gradient(800px 480px at 92% 8%, rgba(122, 162, 255, 0.08), transparent 50%),
+    radial-gradient(900px 500px at 12% -10%, rgba(13, 143, 124, 0.1), transparent 55%),
+    radial-gradient(800px 480px at 92% 8%, rgba(53, 88, 200, 0.07), transparent 50%),
     linear-gradient(var(--line) 1px, transparent 1px),
     linear-gradient(90deg, var(--line) 1px, transparent 1px);
   background-size: auto, auto, 72px 72px, 72px 72px;
@@ -89,7 +89,7 @@ button {
   z-index: 20;
   padding: 8px 12px;
   background: var(--accent);
-  color: #06110e;
+  color: #fff;
   border-radius: 8px;
 }
 
@@ -107,7 +107,7 @@ button {
   top: 0;
   z-index: 10;
   backdrop-filter: blur(18px);
-  background: rgba(7, 9, 14, 0.72);
+  background: rgba(245, 247, 251, 0.84);
   border-bottom: 1px solid var(--line);
 }
 
@@ -199,8 +199,8 @@ button {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 64px;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: 48px;
   align-items: center;
 }
 
@@ -221,13 +221,13 @@ button {
   height: 8px;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 0 0 rgba(77, 226, 196, 0.7);
+  box-shadow: 0 0 0 0 rgba(13, 143, 124, 0.55);
   animation: pulse 2.2s infinite;
 }
 
 @keyframes pulse {
-  70% { box-shadow: 0 0 0 8px rgba(77, 226, 196, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(77, 226, 196, 0); }
+  70% { box-shadow: 0 0 0 8px rgba(13, 143, 124, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(13, 143, 124, 0); }
 }
 
 h1,
@@ -276,13 +276,13 @@ h1 {
 .btn-primary {
   background: var(--accent);
   border-color: var(--accent);
-  color: #07211b;
+  color: #fff;
   font-weight: 600;
 }
 
 .btn-primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 10px 28px rgba(77, 226, 196, 0.22);
+  box-shadow: 0 10px 28px rgba(13, 143, 124, 0.22);
 }
 
 .btn-ghost:hover {
@@ -315,22 +315,22 @@ h1 {
 
 .portrait {
   position: relative;
-  max-width: 420px;
+  width: 220px;
   margin-left: auto;
 }
 
 .portrait-frame {
   position: relative;
   overflow: hidden;
-  border-radius: 28px;
+  border-radius: 18px;
   border: 1px solid var(--line-strong);
-  background: #f4f6f8;
+  background: #eef2f6;
   box-shadow: var(--shadow);
 }
 
 .portrait-frame img {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: center 12%;
 }
@@ -348,20 +348,20 @@ h1 {
 .portrait::after {
   content: "";
   position: absolute;
-  border: 1px solid rgba(77, 226, 196, 0.28);
-  border-radius: 34px;
+  border: 1px solid rgba(13, 143, 124, 0.28);
+  border-radius: 22px;
 }
 
 .portrait::before {
-  inset: -14px -14px auto auto;
-  width: 46%;
-  height: 38%;
+  inset: -10px -10px auto auto;
+  width: 42%;
+  height: 34%;
 }
 
 .portrait::after {
-  inset: auto auto -18px -18px;
-  width: 42%;
-  height: 28%;
+  inset: auto auto -12px -12px;
+  width: 38%;
+  height: 26%;
 }
 
 section {
@@ -414,7 +414,7 @@ h2 {
 }
 
 .card {
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent 40%), var(--card);
+  background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 24px;
@@ -456,7 +456,7 @@ h2 {
   border: 1px solid var(--line-strong);
   border-radius: 999px;
   color: var(--text);
-  background: rgba(255,255,255,0.02);
+  background: var(--card-2);
 }
 
 .timeline {
@@ -489,6 +489,11 @@ h2 {
 
 .role .org {
   margin: 6px 0 10px;
+  color: var(--muted);
+}
+
+.role p {
+  margin: 0;
   color: var(--muted);
 }
 
@@ -536,7 +541,7 @@ h2 {
   padding: 16px 18px;
   border: 1px solid var(--line);
   border-radius: 14px;
-  background: rgba(16, 20, 29, 0.72);
+  background: var(--card);
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
@@ -577,7 +582,7 @@ h2 {
 }
 
 .pub.is-featured {
-  border-color: rgba(77, 226, 196, 0.28);
+  border-color: rgba(13, 143, 124, 0.35);
 }
 
 .pub-more {
@@ -672,8 +677,8 @@ h2 {
   }
 
   .portrait {
-    margin: 8px auto 0;
-    max-width: 360px;
+    width: 168px;
+    margin: 4px auto 0;
   }
 
   .nav-links {
@@ -683,7 +688,7 @@ h2 {
     left: 0;
     right: 0;
     padding: 16px 20px 24px;
-    background: rgba(7, 9, 14, 0.96);
+    background: rgba(245, 247, 251, 0.98);
     border-bottom: 1px solid var(--line);
     flex-direction: column;
   }
